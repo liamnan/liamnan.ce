@@ -2629,5 +2629,8 @@ input, select, textarea {
 				#footer .copyright li:first-child {
 					margin-top: 0;
 				}
-
+				#top .subtitle {
+			font-size: 0.9em;
+			opacity: 0.85;
+			margin-top: 0.75em;
 	}
