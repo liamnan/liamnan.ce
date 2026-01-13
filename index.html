@@ -212,9 +212,24 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 
+
+
+			<script>
+			function copyEmailToClipboard(event) {
+				event.preventDefault();
+		
+				const email = "liamnance4@gmail.com"; 
+				navigator.clipboard.writeText(email).then(() => {
+					alert("Email address copied to clipboard!");
+				}).catch(err => {
+					console.error("Failed to copy email: ", err);
+				});
+			}
+		</script>
 	</body>
 
 </html>
+
 
 
 
