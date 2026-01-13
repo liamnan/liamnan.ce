@@ -2631,7 +2631,7 @@ input, select, textarea {
 				}
 /* Intro subtitle text */
 #top .subtitle {
-	font-size: 0.9em;
+	font-size: 0.75em;
 	opacity: 0.85;
 	margin-top: 0.75em;
 }
