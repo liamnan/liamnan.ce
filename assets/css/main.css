@@ -2630,9 +2630,10 @@ input, select, textarea {
 					margin-top: 0;
 				}
 		/* Smaller subtitle text under main intro heading */
-		#top .subtitle {
-			font-size: 0.85em !important;
-			line-height: 1.5;
-			opacity: 0.8;
-		}
+			#top .subtitle {
+				font-size: 0.8em !important;
+				letter-spacing: 0.05em;
+				text-transform: uppercase;
+				opacity: 0.75;
+			}
 	}
