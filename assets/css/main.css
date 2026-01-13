@@ -2629,10 +2629,10 @@ input, select, textarea {
 				#footer .copyright li:first-child {
 					margin-top: 0;
 				}
-/* Intro subtitle text */
-#top .subtitle {
-	font-size: 0.75em;
-	opacity: 0.85;
-	margin-top: 0.75em;
-}
+		/* Smaller subtitle text under main intro heading */
+		#top .subtitle {
+			font-size: 0.85em !important;
+			line-height: 1.5;
+			opacity: 0.8;
+		}
 	}
