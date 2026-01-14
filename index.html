@@ -276,6 +276,45 @@ document.querySelectorAll('.resume-link, .project-link').forEach(link => {
         document.getElementById('resume-lightbox').style.display = 'flex';
     });
 });
+
+let lastScrollY = window.scrollY;
+let lastTime = performance.now();
+
+window.addEventListener('scroll', () => {
+    const rocket = document.getElementById('rocket-scroll');
+    const body = document.getElementById('rocket-body');
+    const flame = document.getElementById('rocket-flame');
+
+    const now = performance.now();
+    const deltaY = window.scrollY - lastScrollY;
+    const deltaTime = now - lastTime || 1;
+
+    // Scroll speed (pixels per ms)
+    const speed = Math.abs(deltaY / deltaTime);
+
+    // Page progress
+    const maxScroll = document.body.scrollHeight - window.innerHeight;
+    const progress = window.scrollY / maxScroll;
+
+    // Move rocket vertically
+    const maxTravel = window.innerHeight - 140;
+    rocket.style.transform = `translateY(${progress * maxTravel}px)`;
+
+    // Flip rocket direction
+    if (deltaY > 0) {
+        body.style.transform = 'rotate(0deg)';
+    } else {
+        body.style.transform = 'rotate(180deg)';
+    }
+
+    // Flame size based on speed
+    const flameScale = Math.min(1 + speed * 8, 3);
+    flame.style.transform = `scaleY(${flameScale})`;
+    flame.style.opacity = Math.min(0.3 + speed * 2, 1);
+
+    lastScrollY = window.scrollY;
+    lastTime = now;
+});
 </script>
 
 <!-- Lightbox -->
@@ -284,6 +323,13 @@ document.querySelectorAll('.resume-link, .project-link').forEach(link => {
     <button onclick="document.getElementById('resume-lightbox').style.display='none'">✖</button>
 </div>
 
+<!-- Rocket Scroll Indicator -->
+<div id="rocket-scroll">
+    <img id="rocket-body" src="images/saturnv.svg" alt="Saturn V Rocket">
+    <img id="rocket-flame" src="images/rocket-flame.svg" alt="Rocket Flame">
+</div>
+    
 </body>
 </html>
+
 
