@@ -263,7 +263,8 @@
 <script src="assets/js/main.js"></script>
 
 <script>
-// Copy email function function copyEmailToClipboard(event) { event.preventDefault(); const email = 
+// Copy email function 
+    function copyEmailToClipboard(event) { event.preventDefault(); const email = 
     "liamnance4@gmail.com"; navigator.clipboard.writeText(email).then(() => { alert("Email address copied to clipboard! - liamnance4@gmail.com"); }).catch(err => console.error(err)); }
 
 /* Shared lightbox for resume + projects */
@@ -286,6 +287,7 @@ document.querySelectorAll('.resume-link, .project-link').forEach(link => {
     
 </body>
 </html>
+
 
 
 
