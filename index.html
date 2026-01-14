@@ -277,37 +277,6 @@ document.querySelectorAll('.resume-link, .project-link').forEach(link => {
     });
 });
 
-let lastScrollY = window.scrollY;
-let lastTime = performance.now();
-
-window.addEventListener("scroll", () => {
-    const rocket = document.getElementById("rocket-scroll");
-    const body = document.getElementById("rocket-body");
-    const flame = document.getElementById("rocket-flame");
-
-    const maxScroll = document.body.scrollHeight - window.innerHeight;
-    const scrollPercent = window.scrollY / maxScroll;
-
-    // Move rocket vertically within viewport
-    const minY = 50; // top limit
-    const maxY = window.innerHeight - rocket.offsetHeight - 50; // bottom limit
-    rocket.style.top = (minY + scrollPercent * (maxY - minY)) + "px";
-
-    // Detect scroll speed
-    const now = performance.now();
-    const deltaScroll = Math.abs(window.scrollY - lastScrollY);
-    const deltaTime = now - lastTime;
-    const speed = Math.min(deltaScroll / deltaTime * 30, 2.5);
-
-    // Flame scales based on scroll speed
-    flame.style.transform = `scaleY(${1 + speed})`;
-
-    // Flip rocket based on scroll direction
-    body.style.transform = window.scrollY > lastScrollY ? "rotate(0deg)" : "rotate(180deg)";
-
-    lastScrollY = window.scrollY;
-    lastTime = now;
-});
 </script>
 
 <!-- Lightbox -->
@@ -316,14 +285,10 @@ window.addEventListener("scroll", () => {
     <button onclick="document.getElementById('resume-lightbox').style.display='none'">✖</button>
 </div>
 
-<!-- Fake Rocket Scroll Indicator -->
-<div id="rocket-scroll">
-    <img id="rocket-body" src="images/saturn-v.png" alt="Rocket">
-    <img id="rocket-flame" src="images/rocket-flame.png" alt="Flame">
-</div>
     
 </body>
 </html>
+
 
 
 
