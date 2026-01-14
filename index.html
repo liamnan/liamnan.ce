@@ -6,7 +6,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <style>
-        /* Hover zoom for all portfolio and resume images */
+        /* Intro GIF banner */
+        #top {
+            position: relative;
+            height: 100vh;
+        }
+
+        #top .banner-gif {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        /* Optional dark overlay for text readability */
+        #top::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.4);
+            z-index: 0;
+        }
+
+        /* Subtitle under main intro heading */
+        .subtitle {
+            font-size: 1.2em;
+        }
+
+        /* Hover zoom for portfolio and resume images */
         .image.fit {
             display: block;
             width: 100%;
@@ -14,17 +47,17 @@
         }
 
         .image.fit:hover {
-            transform: scale(1.1); /* 10% larger on hover */
+            transform: scale(1.1);
             box-shadow: 0 6px 20px rgba(0,0,0,0.3);
         }
 
         /* Resume thumbnail */
         .resume-thumb {
-            width: 100%;            /* fills the column like portfolio images */
+            width: 100%;
             height: auto;
             display: block;
-            margin: 0 auto;         /* center horizontally */
-            border-radius: 0 !important; /* remove rounded corners */
+            margin: 0 auto;
+            border-radius: 0 !important;
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
@@ -34,17 +67,10 @@
             box-shadow: 0 6px 20px rgba(0,0,0,0.3);
         }
 
-        /* Lightbox fix for close button */
-        #resume-lightbox iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            z-index: 1;
-        }
-
+        /* Lightbox close button */
         #resume-lightbox button {
             position: fixed;
-            top: 20px;
+            top: 60px;
             right: 20px;
             font-size: 2em;
             background: none;
@@ -52,6 +78,21 @@
             border: none;
             cursor: pointer;
             z-index: 10000;
+        }
+
+        /* Mobile adjustments for close button */
+        @media (max-width: 768px) {
+            #resume-lightbox button {
+                top: 50px;
+                font-size: 1.5em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #resume-lightbox button {
+                top: 40px;
+                font-size: 1.2em;
+            }
         }
     </style>
 </head>
@@ -100,9 +141,12 @@
 
     <!-- Intro -->
     <section id="top" class="one dark cover">
+        <!-- GIF Banner -->
+        <img src="images/iss.webp" class="banner-gif" alt="ISS Banner GIF" />
+
         <div class="container">
             <header>
-                <h2 class="alt">Hello! I'm <strong>Liam.</strong> Welcome to my <strong>Portfolio!</strong></h2>
+                <h2 class="alt">Hello! I'm <strong>Liam</strong>, welcome to my <strong>Portfolio!</strong></h2>
                 <p class="subtitle">
                     Aerospace Engineering projects and an assortment of related ventures.
                 </p>
@@ -171,7 +215,7 @@
                         </a>
                         <header><h3>My Resume</h3></header>
                         <p style="text-align:center; margin-top:1em;">
-                            Click the resume image above to view/download the full PDF.
+                            Click the resume image above to view the full PDF.
                         </p>
                     </article>
                 </div>
@@ -237,55 +281,14 @@
 <!-- Resume Lightbox Overlay -->
 <div id="resume-lightbox" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.85); justify-content:center; align-items:center; z-index:10;">
     <iframe id="resume-pdf" src=""></iframe>
-    <!-- Moved the "X" down to top:60px -->
     <button style="position:fixed; top:60px; right:20px; font-size:2em; background:none; color:white; border:none; cursor:pointer; z-index:10000;"
             onclick="document.getElementById('resume-lightbox').style.display='none'">
         ✖
     </button>
 </div>
 
-    <style>
-    /* Lightbox close button */
-    #resume-lightbox button {
-        position: fixed;
-        top: 60px;           /* default for desktop */
-        right: 20px;
-        font-size: 2em;
-        background: none;
-        color: white;
-        border: none;
-        cursor: pointer;
-        z-index: 10000;
-    }
-
-    /* Mobile adjustments */
-    @media (max-width: 768px) {
-        #resume-lightbox button {
-            top: 50px;       /* move slightly lower for smaller screens */
-            font-size: 1.5em; /* make button smaller on mobile */
-        }
-    }
-
-    @media (max-width: 480px) {
-        #resume-lightbox button {
-            top: 40px;       /* even lower for very small screens */
-            font-size: 1.2em; /* smaller button for phones */
-        }
-    }
-</style>
-
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
 
 
 
