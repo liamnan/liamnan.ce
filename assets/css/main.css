@@ -2699,31 +2699,3 @@ input, select, textarea {
     box-shadow: 0 6px 20px rgba(0,0,0,0.3);
 }
 
-#rocket-scroll {
-    position: fixed;
-    right: 14px;
-    top: 100px;
-    width: 5%; /* Rocket container is 5% of viewport width */
-    max-width: 60px; /* Optional max size */
-    height: auto;
-    pointer-events: none;
-    z-index: 99999;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#rocket-body {
-    width: 100%;
-    height: auto;
-    transition: transform 0.2s ease;
-    z-index: 2;
-}
-
-#rocket-flame {
-    width: 70%; /* Flame smaller than rocket by default */
-    height: auto;
-    margin-top: -5%; /* overlaps rocket bottom */
-    transform-origin: top center;
-    transition: transform 0.15s ease;
-}
