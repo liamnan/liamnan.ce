@@ -2655,3 +2655,11 @@ input, select, textarea {
 	height: 100% !important;
 	object-fit: cover !important;
 	border-radius: 50% !important;
+
+#header .icons {
+	opacity: 1;
+}
+
+#header .icons a {
+	color: #79848a;
+}
