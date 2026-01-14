@@ -2703,3 +2703,12 @@ input, select, textarea {
     transform: scale(1.1);
     box-shadow: 0 6px 20px rgba(0,0,0,0.3);
 }
+
+#top.one.cover {
+    background-image: url('images/iss.webp');
+    background-size: cover;       /* fills the section while keeping aspect ratio */
+    background-position: center;  /* center the image */
+    background-repeat: no-repeat;
+    height: 100vh;                /* full viewport height */
+    position: relative;
+}
