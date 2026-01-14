@@ -2641,3 +2641,17 @@ input, select, textarea {
 				opacity: 0.75;
 			}
 	}
+/* FORCE avatar to be 50% larger and circular */
+#logo .image.avatar48 {
+	width: 72px !important;
+	height: 72px !important;
+	border-radius: 50% !important;
+	overflow: hidden !important;
+	background: none !important;
+}
+
+#logo .image.avatar48 img {
+	width: 100% !important;
+	height: 100% !important;
+	object-fit: cover !important;
+	border-radius: 50% !important;
