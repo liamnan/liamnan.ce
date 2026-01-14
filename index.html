@@ -25,7 +25,7 @@
             box-shadow: 0 6px 20px rgba(0,0,0,0.3);
         }
 
-        /* ===== PORTFOLIO PROJECT LAYOUT ===== */
+        /* ===== PORTFOLIO ALTERNATING LAYOUT ===== */
 
         .project {
             display: flex;
@@ -45,6 +45,7 @@
 
         .project-description {
             flex: 1;
+            text-align: left;
         }
 
         .project-description p {
@@ -52,11 +53,15 @@
             line-height: 1.6;
         }
 
-        /* Mobile layout */
+        /* Mobile */
         @media (max-width: 768px) {
             .project,
             .project.reverse {
                 flex-direction: column;
+                text-align: center;
+            }
+
+            .project-description {
                 text-align: center;
             }
 
@@ -104,7 +109,7 @@
     <div class="bottom">
         <ul class="icons">
             <li>
-                <a href="https://www.linkedin.com/in/liam-nance-59453b297" class="icon brands fa-linkedin-in" target="_blank">
+                <a href="https://www.linkedin.com/in/liam-nance-59453b297" class="icon brands fa-linkedin-in" target="_blank" rel="noopener">
                     <span class="label">LinkedIn</span>
                 </a>
             </li>
@@ -117,6 +122,7 @@
     </div>
 </div>
 
+<!-- Main -->
 <div id="main">
 
 <!-- Intro -->
@@ -124,7 +130,9 @@
     <div class="container">
         <header>
             <h2 class="alt">Hello! I'm <strong>Liam.</strong> Welcome to my <strong>Portfolio!</strong></h2>
-            <p class="subtitle">Aerospace Engineering projects and an assortment of related ventures.</p>
+            <p class="subtitle">
+                Aerospace Engineering projects and an assortment of related ventures.
+            </p>
         </header>
     </div>
 </section>
@@ -132,20 +140,28 @@
 <!-- Portfolio -->
 <section id="portfolio" class="two">
     <div class="container">
-        <header><h2>Portfolio</h2></header>
+        <header>
+            <h2>Portfolio</h2>
+        </header>
+
+        <p>
+            Below are the projects that capture a snapshot of what I do. Some display my technical skills as an Aerospace Engineer,
+            and others are representative of my adaptability and drive to solve new problems. Please click on any of the image previews to learn more.
+        </p>
 
         <!-- Project 1 -->
         <div class="project">
             <div class="project-thumb">
                 <a href="assets/project1.pdf" class="resume-link">
-                    <img src="images/pic02.jpg" class="image fit" alt="">
+                    <img src="images/pic02.jpg" class="image fit" alt="" />
                 </a>
                 <header><h3>Ipsum Feugiat</h3></header>
             </div>
             <div class="project-description">
                 <p>
-                    Description of the project goes here. Explain the problem, tools used,
-                    engineering discipline, and outcome. This space is intentionally flexible.
+                    <!-- Replace with project description -->
+                    Detailed description of this project goes here. Discuss objectives, methods, tools,
+                    and engineering outcomes.
                 </p>
             </div>
         </div>
@@ -154,19 +170,34 @@
         <div class="project reverse">
             <div class="project-thumb">
                 <a href="assets/project2.pdf" class="resume-link">
-                    <img src="images/pic03.jpg" class="image fit" alt="">
+                    <img src="images/pic03.jpg" class="image fit" alt="" />
                 </a>
                 <header><h3>Rhoncus Semper</h3></header>
             </div>
             <div class="project-description">
                 <p>
-                    Second project description. On desktop this alternates sides; on mobile
-                    it stacks cleanly.
+                    <!-- Replace with project description -->
+                    Description text for the second project. This alternates left/right on desktop
+                    and stacks cleanly on mobile.
                 </p>
             </div>
         </div>
 
-        <!-- Add more projects by copying the blocks above -->
+        <!-- Project 3 -->
+        <div class="project">
+            <div class="project-thumb">
+                <a href="assets/project3.pdf" class="resume-link">
+                    <img src="images/pic04.jpg" class="image fit" alt="" />
+                </a>
+                <header><h3>Magna Nullam</h3></header>
+            </div>
+            <div class="project-description">
+                <p>
+                    <!-- Replace with project description -->
+                    Add additional projects by copying one of these blocks.
+                </p>
+            </div>
+        </div>
 
     </div>
 </section>
@@ -175,25 +206,44 @@
 <section id="resume" class="two">
     <div class="container">
         <header><h2>Resume</h2></header>
+
         <div class="row">
-            <div class="col-4 col-12-mobile" style="margin:0 auto;">
-                <article class="item">
+            <div class="col-4 col-12-mobile" style="margin:0 auto; float:none;">
+                <article class="item resume-container">
                     <a href="assets/Liam Nance Resume 2026.pdf" class="resume-link">
-                        <img src="images/resume-thumb.jpg" class="resume-thumb" alt="">
+                        <img src="images/resume-thumb.jpg" alt="Resume Preview" class="resume-thumb" />
                     </a>
                     <header><h3>My Resume</h3></header>
+                    <p style="text-align:center; margin-top:1em;">
+                        Click the resume image above to view the full PDF.
+                    </p>
                 </article>
             </div>
         </div>
     </div>
 </section>
 
-<!-- About Me (unchanged) -->
+<!-- About Me -->
 <section id="about" class="three">
     <div class="container">
         <header><h2>About Me</h2></header>
-        <a class="image featured"><img src="images/LiamJPL.jpg" alt=""></a>
-        <p>[Your existing text]</p>
+        <a href="#" class="image featured"><img src="images/LiamJPL.jpg" alt="" /></a>
+        <p>
+            I'm a passionate engineer graduating with an M.S. in Aerospace Engineering in May 2026, with a 
+            strong foundation in spacecraft design, propulsion systems, compressible flow, and computer-aided 
+            design. I consider myself an expert problem solver who is uniquely creative and adaptable. I am constantly 
+            taking up new professional challenges and personal hobbies to keep my abilities fresh and my toolbox
+            expanding. I am proficient in industry-standard software such as MATLAB, SolidWorks, ANSYS Fluent,
+            Fusion, and Siemens NX.
+            <br><br>
+            Throughout my academic and professional career, I have honed my skills in complex
+            root-cause analysis, attention to detail, problem-solving, and data-driven decision-making. I am particularly
+            interested in advancing space flight technologies, with a primary focus on exploration and interplanetary
+            habitation.
+            <br><br>
+            Beyond my technical expertise, I enjoy 3D design/printing, rug-making,
+            woodworking, and rock climbing.
+        </p>
     </div>
 </section>
 
@@ -204,30 +254,31 @@
 <script src="assets/js/main.js"></script>
 
 <script>
-function copyEmailToClipboard(e) {
-    e.preventDefault();
+function copyEmailToClipboard(event) {
+    event.preventDefault();
     navigator.clipboard.writeText("liamnance4@gmail.com");
-    alert("Email copied!");
+    alert("Email address copied to clipboard! - liamnance4@gmail.com");
 }
 
 document.querySelectorAll('.resume-link').forEach(link => {
-    link.addEventListener('click', e => {
+    link.addEventListener('click', function(e) {
         e.preventDefault();
-        document.getElementById('resume-pdf').src = link.href;
+        document.getElementById('resume-pdf').src = this.href;
         document.getElementById('resume-lightbox').style.display = 'flex';
     });
 });
 </script>
 
 <!-- Lightbox -->
-<div id="resume-lightbox" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85); justify-content:center; align-items:center;">
+<div id="resume-lightbox"
+     style="display:none; position:fixed; top:0; left:0; width:100%; height:100%;
+            background:rgba(0,0,0,0.85); justify-content:center; align-items:center; z-index:10000;">
     <iframe id="resume-pdf" style="width:90vw; height:90vh; border:none;"></iframe>
     <button onclick="document.getElementById('resume-lightbox').style.display='none'">✖</button>
 </div>
 
 </body>
 </html>
-
 
 
 
