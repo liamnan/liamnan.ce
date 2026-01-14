@@ -2689,11 +2689,17 @@ input, select, textarea {
 
 /* Resize resume thumbnail to match portfolio images */
 .resume-thumb {
-    width: 100%;       /* full width of its column */
+    width: auto;       /* natural width, not forced by column */
+    max-width: 400px;  /* same as portfolio images */
     height: auto;
-    display: block;
-    margin: 0 auto;    /* centers the image */
-    border-radius: 0;  /* remove rounded corners */
+    display: inline-block; /* necessary for centering */
+    border-radius: 0 !important; /* force no rounding */
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.resume-thumb:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
 }
