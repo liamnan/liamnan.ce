@@ -280,37 +280,30 @@ document.querySelectorAll('.resume-link, .project-link').forEach(link => {
 let lastScrollY = window.scrollY;
 let lastTime = performance.now();
 
-window.addEventListener('scroll', () => {
-    const rocket = document.getElementById('rocket-scroll');
-    const body = document.getElementById('rocket-body');
-    const flame = document.getElementById('rocket-flame');
+window.addEventListener("scroll", () => {
+    const rocket = document.getElementById("rocket-scroll");
+    const body = document.getElementById("rocket-body");
+    const flame = document.getElementById("rocket-flame");
 
-    const now = performance.now();
-    const deltaY = window.scrollY - lastScrollY;
-    const deltaTime = now - lastTime || 1;
-
-    // Scroll speed (pixels per ms)
-    const speed = Math.abs(deltaY / deltaTime);
-
-    // Page progress
     const maxScroll = document.body.scrollHeight - window.innerHeight;
-    const progress = window.scrollY / maxScroll;
+    const scrollPercent = window.scrollY / maxScroll;
 
-    // Move rocket vertically
-    const maxTravel = window.innerHeight - 140;
-    rocket.style.transform = `translateY(${progress * maxTravel}px)`;
+    // Move rocket vertically within viewport
+    const minY = 50; // top limit
+    const maxY = window.innerHeight - rocket.offsetHeight - 50; // bottom limit
+    rocket.style.top = (minY + scrollPercent * (maxY - minY)) + "px";
 
-    // Flip rocket direction
-    if (deltaY > 0) {
-        body.style.transform = 'rotate(0deg)';
-    } else {
-        body.style.transform = 'rotate(180deg)';
-    }
+    // Detect scroll speed
+    const now = performance.now();
+    const deltaScroll = Math.abs(window.scrollY - lastScrollY);
+    const deltaTime = now - lastTime;
+    const speed = Math.min(deltaScroll / deltaTime * 30, 2.5);
 
-    // Flame size based on speed
-    const flameScale = Math.min(1 + speed * 8, 3);
-    flame.style.transform = `scaleY(${flameScale})`;
-    flame.style.opacity = Math.min(0.3 + speed * 2, 1);
+    // Flame scales based on scroll speed
+    flame.style.transform = `scaleY(${1 + speed})`;
+
+    // Flip rocket based on scroll direction
+    body.style.transform = window.scrollY > lastScrollY ? "rotate(0deg)" : "rotate(180deg)";
 
     lastScrollY = window.scrollY;
     lastTime = now;
@@ -323,14 +316,15 @@ window.addEventListener('scroll', () => {
     <button onclick="document.getElementById('resume-lightbox').style.display='none'">✖</button>
 </div>
 
-<!-- Rocket Scroll Indicator -->
+<!-- Fake Rocket Scroll Indicator -->
 <div id="rocket-scroll">
-    <img id="rocket-body" src="images/saturnv.png" alt="Saturn V Rocket">
-    <img id="rocket-flame" src="images/rocket-flame.png" alt="Rocket Flame">
+    <img id="rocket-body" src="images/saturn-v.png" alt="Rocket">
+    <img id="rocket-flame" src="images/rocket-flame.png" alt="Flame">
 </div>
     
 </body>
 </html>
+
 
 
 
