@@ -13,7 +13,7 @@
             line-height: 1.4;
         }
 
-        /* Hover zoom */
+        /* Hover zoom (portfolio + resume) */
         .image.fit, .resume-thumb {
             display: block;
             width: 100%;
@@ -25,22 +25,28 @@
             box-shadow: 0 6px 20px rgba(0,0,0,0.3);
         }
 
-        /* ===== PORTFOLIO ALTERNATING LAYOUT ===== */
+        .resume-thumb {
+            margin: 0 auto;
+            border-radius: 0 !important;
+            height: auto;
+            max-width: 100%;
+        }
 
-        .project {
+        /* ===== Portfolio Alternating Layout ===== */
+        .project-row {
             display: flex;
             align-items: center;
             gap: 3em;
             margin: 4em 0;
         }
 
-        .project.reverse {
+        .project-row.reverse {
             flex-direction: row-reverse;
         }
 
-        .project-thumb {
-            flex: 1;
-            max-width: 420px;
+        .project-image {
+            flex: 0 0 35%;
+            text-align: center;
         }
 
         .project-description {
@@ -48,25 +54,16 @@
             text-align: left;
         }
 
-        .project-description p {
-            font-size: 1.05em;
-            line-height: 1.6;
-        }
-
-        /* Mobile */
+        /* Mobile stacking */
         @media (max-width: 768px) {
-            .project,
-            .project.reverse {
+            .project-row,
+            .project-row.reverse {
                 flex-direction: column;
                 text-align: center;
             }
 
             .project-description {
                 text-align: center;
-            }
-
-            .project-thumb {
-                max-width: 100%;
             }
         }
 
@@ -109,12 +106,14 @@
     <div class="bottom">
         <ul class="icons">
             <li>
-                <a href="https://www.linkedin.com/in/liam-nance-59453b297" class="icon brands fa-linkedin-in" target="_blank" rel="noopener">
+                <a href="https://www.linkedin.com/in/liam-nance-59453b297"
+                   class="icon brands fa-linkedin-in" target="_blank" rel="noopener">
                     <span class="label">LinkedIn</span>
                 </a>
             </li>
             <li>
-                <a href="#" class="icon solid fa-envelope" onclick="copyEmailToClipboard(event)">
+                <a href="#" class="icon solid fa-envelope"
+                   onclick="copyEmailToClipboard(event)">
                     <span class="label">Email</span>
                 </a>
             </li>
@@ -125,162 +124,149 @@
 <!-- Main -->
 <div id="main">
 
-<!-- Intro -->
-<section id="top" class="one dark cover">
-    <div class="container">
-        <header>
-            <h2 class="alt">Hello! I'm <strong>Liam.</strong> Welcome to my <strong>Portfolio!</strong></h2>
-            <p class="subtitle">
-                Aerospace Engineering projects and an assortment of related ventures.
+    <!-- Intro -->
+    <section id="top" class="one dark cover">
+        <div class="container">
+            <header>
+                <h2 class="alt">Hello! I'm <strong>Liam.</strong> Welcome to my <strong>Portfolio!</strong></h2>
+                <p class="subtitle">
+                    Aerospace Engineering projects and an assortment of related ventures.
+                </p>
+            </header>
+        </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section id="portfolio" class="two">
+        <div class="container">
+            <header>
+                <h2>Portfolio</h2>
+            </header>
+
+            <p>
+                Below are the projects that capture a snapshot of what I do. Some display my technical skills as an Aerospace Engineer,
+                and others are representative of my adaptability and drive to solve new problems. Please click on any of the image previews to learn more.
             </p>
-        </header>
-    </div>
-</section>
 
-<!-- Portfolio -->
-<section id="portfolio" class="two">
-    <div class="container">
-        <header>
-            <h2>Portfolio</h2>
-        </header>
-
-        <p>
-            Below are the projects that capture a snapshot of what I do. Some display my technical skills as an Aerospace Engineer,
-            and others are representative of my adaptability and drive to solve new problems. Please click on any of the image previews to learn more.
-        </p>
-
-        <!-- Project 1 -->
-        <div class="project">
-            <div class="project-thumb">
-                <a href="assets/project1.pdf" class="resume-link">
-                    <img src="images/pic02.jpg" class="image fit" alt="" />
-                </a>
-                <header><h3>Ipsum Feugiat</h3></header>
-            </div>
-            <div class="project-description">
-                <p>
-                    <!-- Replace with project description -->
-                    Detailed description of this project goes here. Discuss objectives, methods, tools,
-                    and engineering outcomes.
-                </p>
-            </div>
-        </div>
-
-        <!-- Project 2 -->
-        <div class="project reverse">
-            <div class="project-thumb">
-                <a href="assets/project2.pdf" class="resume-link">
-                    <img src="images/pic03.jpg" class="image fit" alt="" />
-                </a>
-                <header><h3>Rhoncus Semper</h3></header>
-            </div>
-            <div class="project-description">
-                <p>
-                    <!-- Replace with project description -->
-                    Description text for the second project. This alternates left/right on desktop
-                    and stacks cleanly on mobile.
-                </p>
-            </div>
-        </div>
-
-        <!-- Project 3 -->
-        <div class="project">
-            <div class="project-thumb">
-                <a href="assets/project3.pdf" class="resume-link">
-                    <img src="images/pic04.jpg" class="image fit" alt="" />
-                </a>
-                <header><h3>Magna Nullam</h3></header>
-            </div>
-            <div class="project-description">
-                <p>
-                    <!-- Replace with project description -->
-                    Add additional projects by copying one of these blocks.
-                </p>
-            </div>
-        </div>
-
-    </div>
-</section>
-
-<!-- Resume -->
-<section id="resume" class="two">
-    <div class="container">
-        <header><h2>Resume</h2></header>
-
-        <div class="row">
-            <div class="col-4 col-12-mobile" style="margin:0 auto; float:none;">
-                <article class="item resume-container">
-                    <a href="assets/Liam Nance Resume 2026.pdf" class="resume-link">
-                        <img src="images/resume-thumb.jpg" alt="Resume Preview" class="resume-thumb" />
-                    </a>
-                    <header><h3>My Resume</h3></header>
-                    <p style="text-align:center; margin-top:1em;">
-                        Click the resume image above to view the full PDF.
+            <!-- Project 1 -->
+            <div class="project-row">
+                <div class="project-image">
+                    <article class="item">
+                        <a href="assets/project1.pdf" class="project-link image fit">
+                            <img src="images/pic02.jpg" alt="" />
+                        </a>
+                        <header><h3>Ipsum Feugiat</h3></header>
+                    </article>
+                </div>
+                <div class="project-description">
+                    <p>
+                        Project description goes here. Describe objectives, tools, analysis methods,
+                        and outcomes. This text can be as long or short as needed.
                     </p>
-                </article>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-row reverse">
+                <div class="project-image">
+                    <article class="item">
+                        <a href="assets/project2.pdf" class="project-link image fit">
+                            <img src="images/pic03.jpg" alt="" />
+                        </a>
+                        <header><h3>Rhoncus Semper</h3></header>
+                    </article>
+                </div>
+                <div class="project-description">
+                    <p>
+                        Project description goes here. Highlight aerospace relevance, design decisions,
+                        simulations, or testing performed.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-row">
+                <div class="project-image">
+                    <article class="item">
+                        <a href="assets/project3.pdf" class="project-link image fit">
+                            <img src="images/pic04.jpg" alt="" />
+                        </a>
+                        <header><h3>Magna Nullam</h3></header>
+                    </article>
+                </div>
+                <div class="project-description">
+                    <p>
+                        Project description goes here.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Resume -->
+    <section id="resume" class="two">
+        <div class="container">
+            <header><h2>Resume</h2></header>
+            <div class="row">
+                <div class="col-4 col-12-mobile" style="margin:0 auto;">
+                    <article class="item">
+                        <a href="assets/Liam Nance Resume 2026.pdf" class="resume-link">
+                            <img src="images/resume-thumb.jpg" class="resume-thumb" />
+                        </a>
+                        <header><h3>My Resume</h3></header>
+                        <p>Click the resume image above to view the full PDF.</p>
+                    </article>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- About Me -->
-<section id="about" class="three">
-    <div class="container">
-        <header><h2>About Me</h2></header>
-        <a href="#" class="image featured"><img src="images/LiamJPL.jpg" alt="" /></a>
-        <p>
-            I'm a passionate engineer graduating with an M.S. in Aerospace Engineering in May 2026, with a 
-            strong foundation in spacecraft design, propulsion systems, compressible flow, and computer-aided 
-            design. I consider myself an expert problem solver who is uniquely creative and adaptable. I am constantly 
-            taking up new professional challenges and personal hobbies to keep my abilities fresh and my toolbox
-            expanding. I am proficient in industry-standard software such as MATLAB, SolidWorks, ANSYS Fluent,
-            Fusion, and Siemens NX.
-            <br><br>
-            Throughout my academic and professional career, I have honed my skills in complex
-            root-cause analysis, attention to detail, problem-solving, and data-driven decision-making. I am particularly
-            interested in advancing space flight technologies, with a primary focus on exploration and interplanetary
-            habitation.
-            <br><br>
-            Beyond my technical expertise, I enjoy 3D design/printing, rug-making,
-            woodworking, and rock climbing.
-        </p>
-    </div>
-</section>
+    <!-- About Me -->
+    <section id="about" class="three">
+        <div class="container">
+            <header><h2>About Me</h2></header>
+            <a href="#" class="image featured"><img src="images/LiamJPL.jpg" alt="" /></a>
+            <p>
+                I'm a passionate engineer graduating with an M.S. in Aerospace Engineering in May 2026, with a 
+                strong foundation in spacecraft design, propulsion systems, compressible flow, and computer-aided 
+                design. I consider myself an expert problem solver who is uniquely creative and adaptable...
+            </p>
+        </div>
+    </section>
 
 </div>
 
 <!-- Scripts -->
 <script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
 <script src="assets/js/main.js"></script>
 
 <script>
 function copyEmailToClipboard(event) {
     event.preventDefault();
     navigator.clipboard.writeText("liamnance4@gmail.com");
-    alert("Email address copied to clipboard! - liamnance4@gmail.com");
 }
 
-document.querySelectorAll('.resume-link').forEach(link => {
-    link.addEventListener('click', function(e) {
+/* Shared lightbox for resume + projects */
+document.querySelectorAll('.resume-link, .project-link').forEach(link => {
+    link.addEventListener('click', e => {
         e.preventDefault();
-        document.getElementById('resume-pdf').src = this.href;
+        document.getElementById('resume-pdf').src = link.href;
         document.getElementById('resume-lightbox').style.display = 'flex';
     });
 });
 </script>
 
 <!-- Lightbox -->
-<div id="resume-lightbox"
-     style="display:none; position:fixed; top:0; left:0; width:100%; height:100%;
-            background:rgba(0,0,0,0.85); justify-content:center; align-items:center; z-index:10000;">
+<div id="resume-lightbox" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85); justify-content:center; align-items:center; z-index:10000;">
     <iframe id="resume-pdf" style="width:90vw; height:90vh; border:none;"></iframe>
     <button onclick="document.getElementById('resume-lightbox').style.display='none'">✖</button>
 </div>
 
 </body>
 </html>
-
-
-
-
-
