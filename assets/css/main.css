@@ -2671,14 +2671,16 @@ input, select, textarea {
 }
 
 .resume-thumb {
-    width: 75%; /* 25% smaller than full width */
-    max-width: 400px; /* caps width */
+    width: auto; /* keep original width */
+    max-width: 400px; /* optional cap */
+    transform: scale(0.75); /* shrink 25% */
+    display: inline-block; /* required for scale to work nicely */
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .resume-thumb:hover {
-    transform: scale(1.05);
+    transform: scale(0.8); /* slightly bigger on hover */
     box-shadow: 0 6px 20px rgba(0,0,0,0.3);
 }
