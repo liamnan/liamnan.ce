@@ -2664,19 +2664,21 @@ input, select, textarea {
 	color: #79848a;
 }
 
-/* Resume Thumbnail styling to match portfolio items */
+/* Resume Thumbnail styling */
+.resume-container {
+    text-align: center; /* centers the thumbnail */
+    margin-bottom: 1em;
+}
+
 .resume-thumb {
-	width: 100%;
-	border-radius: 8px;
-	box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-	transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 75%; /* 25% smaller than full width */
+    max-width: 400px; /* caps width */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .resume-thumb:hover {
-	transform: scale(1.05);
-	box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-}
-
-#resume .row {
-	justify-content: center;
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
 }
