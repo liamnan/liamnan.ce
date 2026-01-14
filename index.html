@@ -244,8 +244,39 @@
     </button>
 </div>
 
+    <style>
+    /* Lightbox close button */
+    #resume-lightbox button {
+        position: fixed;
+        top: 60px;           /* default for desktop */
+        right: 20px;
+        font-size: 2em;
+        background: none;
+        color: white;
+        border: none;
+        cursor: pointer;
+        z-index: 10000;
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 768px) {
+        #resume-lightbox button {
+            top: 50px;       /* move slightly lower for smaller screens */
+            font-size: 1.5em; /* make button smaller on mobile */
+        }
+    }
+
+    @media (max-width: 480px) {
+        #resume-lightbox button {
+            top: 40px;       /* even lower for very small screens */
+            font-size: 1.2em; /* smaller button for phones */
+        }
+    }
+</style>
+
 </body>
 </html>
+
 
 
 
