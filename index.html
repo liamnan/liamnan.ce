@@ -281,12 +281,18 @@ document.querySelectorAll('.resume-link, .project-link').forEach(link => {
 <!-- Lightbox -->
 <div id="resume-lightbox" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85); justify-content:center; align-items:center; z-index:10000;">
     <iframe id="resume-pdf" style="width:90vw; height:90vh; border:none;"></iframe>
-    <button onclick="document.getElementById('resume-lightbox').style.display='none'">✖</button>
+    <button 
+        onclick="document.getElementById('resume-lightbox').style.display='none'"
+        style="position:fixed; top:20px; right:20px; font-size:2em; background:none; 
+               color:white; border:none; cursor:pointer; padding:0; width:auto; height:auto; line-height:1; z-index:10001;">
+        ✖
+    </button>
 </div>
 
     
 </body>
 </html>
+
 
 
 
