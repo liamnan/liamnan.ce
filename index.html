@@ -6,9 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <style>
-        /* Subtitle font size */
-        .subtitle {
-            font-size: 1.2em;
+        /* Intro Section Text Styling */
+        #top h2.alt {
+            font-size: 3em;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        #top .subtitle {
+            font-size: 1.5em;
+            font-weight: 500;
+            line-height: 1.4;
         }
 
         /* Hover zoom for portfolio and resume images */
@@ -31,24 +39,28 @@
             max-width: 100%;
         }
 
-        /* Lightbox close button */
+        /* Resume lightbox close button */
         #resume-lightbox button {
             position: fixed;
-            top: 60px;
+            top: 80px;
             right: 20px;
             font-size: 2em;
             background: none;
             color: white;
             border: none;
             cursor: pointer;
-            z-index: 10000;
+            z-index: 10001;
         }
 
-        /* Mobile adjustments for close button */
+        /* Mobile adjustments for close button and iframe */
         @media (max-width: 768px) {
             #resume-lightbox button {
                 top: 50px;
                 font-size: 1.5em;
+            }
+            #resume-pdf {
+                width: 95vw;
+                height: 85vh;
             }
         }
 
@@ -231,16 +243,28 @@
             e.preventDefault();
             const pdfURL = this.getAttribute('href');
             const lightbox = document.getElementById('resume-lightbox');
-            document.getElementById('resume-pdf').setAttribute('src', pdfURL);
+            const iframe = document.getElementById('resume-pdf');
+            iframe.setAttribute('src', pdfURL);
+
+            // Set iframe size dynamically
+            iframe.style.width = "90vw";
+            iframe.style.height = "90vh";
+            iframe.style.maxWidth = "1200px";
+            iframe.style.maxHeight = "90vh";
+            iframe.style.border = "none";
+
             lightbox.style.display = 'flex';
         });
     });
 </script>
 
 <!-- Resume Lightbox Overlay -->
-<div id="resume-lightbox" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.85); justify-content:center; align-items:center; z-index:10;">
-    <iframe id="resume-pdf" src=""></iframe>
-    <button style="position:fixed; top:60px; right:20px; font-size:2em; background:none; color:white; border:none; cursor:pointer; z-index:10000;"
+<div id="resume-lightbox"
+     style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; 
+            background: rgba(0,0,0,0.85); justify-content:center; align-items:center; z-index:10000;">
+    <iframe id="resume-pdf" src="" style="width:90vw; height:90vh; max-width:1200px; max-height:90vh; border:none;"></iframe>
+    <button style="position:fixed; top:80px; right:20px; font-size:2em; background:none; 
+                   color:white; border:none; cursor:pointer; z-index:10001;"
             onclick="document.getElementById('resume-lightbox').style.display='none'">
         ✖
     </button>
@@ -248,10 +272,6 @@
 
 </body>
 </html>
-
-
-
-
 
 
 
