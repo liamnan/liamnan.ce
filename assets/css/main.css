@@ -2663,3 +2663,20 @@ input, select, textarea {
 #header .icons a {
 	color: #79848a;
 }
+
+/* Resume Thumbnail styling to match portfolio items */
+.resume-thumb {
+	width: 100%;
+	border-radius: 8px;
+	box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.resume-thumb:hover {
+	transform: scale(1.05);
+	box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+#resume .row {
+	justify-content: center;
+}
