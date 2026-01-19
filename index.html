@@ -327,15 +327,25 @@
     function copyEmailToClipboard(event) { event.preventDefault(); const email = 
     "liamnance4@gmail.com"; navigator.clipboard.writeText(email).then(() => { alert("Email address copied to clipboard! - liamnance4@gmail.com"); }).catch(err => console.error(err)); }
 
+function isMobile() {
+    return window.matchMedia("(max-width: 768px)").matches;
+}
+
 /* Shared lightbox for resume + projects */
 document.querySelectorAll('.resume-link, .project-link').forEach(link => {
     link.addEventListener('click', e => {
+
+        // ✅ On mobile: open PDF normally
+        if (isMobile()) {
+            return; // allow default link behavior
+        }
+
+        // ✅ Desktop: use lightbox (unchanged behavior)
         e.preventDefault();
         document.getElementById('resume-pdf').src = link.href;
         document.getElementById('resume-lightbox').style.display = 'flex';
     });
 });
-
 </script>
 
 <!-- Lightbox -->
@@ -352,6 +362,7 @@ document.querySelectorAll('.resume-link, .project-link').forEach(link => {
     
 </body>
 </html>
+
 
 
 
