@@ -153,6 +153,33 @@
                 <u>Click on any of the image previews to view the full PDF reports</u>.
             </p>
 
+            <!-- Project 1 -->
+            <div class="project-row">
+                <div class="project-image">
+                    <article class="item">
+                        <a href="assets/Intercept Algorithm Report.pdf" class="project-link image fit">
+                            <img src="images/InterceptProgram.PNG" alt="" />
+                        </a>
+                        <header><h3>Click to view the full PDF</h3></header>
+                    </article>
+                </div>
+                <div class="project-description">
+                    <p>
+                        <h3><u>Hypersonic Intercept Guidance Algorithm</u></h3> <br>
+                        I spent about a week developing an intercept algorithm in <u>MATLAB</u> for the sole purpose of learning more about GNC fundamentals. This algorithm simulates a hypersonic missile
+                        intercepting a randomly generated, maneuvering hypersonic target. It uses <u>pure proportional navigation (PPN)</u> since it is more fundamental to accelerate perpendicular to the missile velocity
+                        than to use true proportional navigation (TPN), which accelerates perpendicular to the line of sight (LOS). I simulated noisy seeker data and used a <u>Kalman Filter</u> to predict the target path and 
+                        smooth the data, then plotted the intercept path on a live plot so the path to intercept could be animated in real time. 
+
+                        The program features are: randomized target path, PPN scheme, boost and glide phase acceleration, acceleration control lag, acceleration clamp, and a Kalman Filter. In terms of GNC, this program 
+                        breaks them down as such: <u>G - PPN with boost and glide phase. N - 9-state Kalman filter for determining relative position. C - 1st order lag and acceleration clamp.</u>u> 
+
+                        Though simple, developing this model was a great exercise to teach me the fundamentals of GNC. I have plenty of room to refine the algorithm, and there are still plenty of improvements I'd like to make
+                        for the algorithm to more closely resemble real-world applications.
+                    </p>
+                </div>
+            </div>
+            
             <!-- Project 2 -->
             <div class="project-row reverse">
                 <div class="project-image large-image">
